@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Traductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Traductor</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Traductor de números</ion-card-title>
+      <ion-card-subtitle>Traduce números a letras</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Número</ion-label>
+        <ion-searchbar animated="true" type="number" [(ngModel)]="num" placeholder="Ingrese un número"></ion-searchbar>
+      </ion-item>
+
+      <ion-button expand="block" (click)="translate()">Traducir</ion-button>
+      <div *ngIf="numberInWords">
+        <ion-item>
+          <ion-label>{{ numberInWords }}</ion-label>
+        </ion-item>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
